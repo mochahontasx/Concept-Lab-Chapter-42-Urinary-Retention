@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept Lab · Urinary Retention · Nurse Declassified</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rose:#ed3e79; --purple:#6a1b9a; --teal:#00695c;
+  --ink:#1f1235; --paper:#fbf7fd; --card:#ffffff;
+  --line:#ecddf2; --muted:#7a6a86;
+  --danger:#c62828; --warn:#ef6c00; --go:#2e7d32; --gold:#f9a825;
+  --shadow:0 14px 40px rgba(106,27,154,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(1200px 600px at 12% -8%,#fde4ef 0,transparent 55%),
+  radial-gradient(1000px 520px at 100% 0,#ece7ff 0,transparent 50%),
+  var(--paper);
+  color:var(--ink);font-family:Nunito,system-ui,Arial,sans-serif;font-weight:700;
+  -webkit-font-smoothing:antialiased;line-height:1.5}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 18px 70px}
+h1,h2,h3,.disp{font-family:'Fredoka One',cursive;font-weight:400;letter-spacing:.2px}
+a{color:var(--rose)}
+.eyebrow{font-size:12px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase;color:var(--purple);opacity:.8}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:26px;align-items:center;
+  background:linear-gradient(135deg,#2c0f47,#5a1786 60%,#7a1fa2);border-radius:30px;
+  padding:30px 32px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  radial-gradient(420px 300px at 88% 120%,rgba(237,62,121,.45),transparent 60%);pointer-events:none}
+.hero .eyebrow{color:#ffd0e4}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.02;margin:.18em 0 .25em}
+.hero h1 .em{color:#ffd23f}
+.hero p{font-weight:800;color:#f0e3fb;margin:0 0 16px;font-size:16px;max-width:46ch}
+.ivy{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);
+  border:1.5px solid rgba(255,255,255,.28);border-radius:50px;padding:6px 14px 6px 7px;font-size:13px;font-weight:900}
+.ivy .face{width:30px;height:30px;border-radius:50%;background:
+  radial-gradient(circle at 50% 38%,#7a4a2b,#5a3420);position:relative;overflow:hidden;border:2px solid #ffd23f}
+.ivy .face:after{content:"";position:absolute;left:50%;top:8px;width:22px;height:20px;transform:translateX(-50%);
+  background:#1a1014;border-radius:50% 50% 44% 44%}
+.tagrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:4px}
+.tag{font-size:11.5px;font-weight:900;letter-spacing:.4px;padding:5px 11px;border-radius:30px;
+  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25)}
+.tag.boss{background:#ed3e79;border-color:#ed3e79}
+
+/* BLADDER SIGNATURE */
+.scan{background:rgba(8,2,18,.34);border:1.5px solid rgba(255,255,255,.18);border-radius:24px;
+  padding:16px;text-align:center}
+.scan svg{width:100%;height:236px;display:block}
+.readout{font-family:'Fredoka One',cursive;font-size:40px;line-height:1;margin-top:2px}
+.readout small{font-family:Nunito;font-weight:900;font-size:14px;opacity:.7}
+.verdict{font-weight:900;font-size:13px;margin-top:3px;min-height:18px}
+.scanbtns{display:flex;gap:8px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.mini{font-family:Nunito;font-weight:900;font-size:12.5px;border:none;border-radius:30px;padding:9px 14px;cursor:pointer;color:#fff;transition:transform .08s}
+.mini:active{transform:scale(.95)}
+.mini.fill{background:var(--warn)} .mini.drain{background:var(--teal)} .mini.reset{background:rgba(255,255,255,.22)}
+
+/* SECTIONS */
+section{margin-top:34px}
+.sechead{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.sechead h2{font-size:clamp(22px,3.2vw,30px);margin:0;color:var(--purple)}
+.sechead .num{font-family:'Fredoka One';color:var(--rose);font-size:18px}
+.lead{color:var(--muted);font-weight:800;max-width:70ch;margin:-4px 0 4px}
+
+/* 15-DIM SPINE */
+.spine{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.dim{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:0;overflow:hidden;
+  box-shadow:0 4px 16px rgba(106,27,154,.05)}
+.dim>button{all:unset;display:flex;align-items:center;gap:10px;width:100%;padding:14px 15px;cursor:pointer;box-sizing:border-box}
+.dim .dot{width:30px;height:30px;border-radius:9px;flex:none;display:grid;place-items:center;font-size:15px;background:#f6ecfb}
+.dim .t{font-family:'Fredoka One';font-size:14.5px;color:var(--ink);line-height:1.1}
+.dim .t small{display:block;font-family:Nunito;font-weight:800;font-size:11px;color:var(--muted);margin-top:2px}
+.dim .body{display:none;padding:0 15px 15px;font-size:13.5px;font-weight:700;color:#3c2b48}
+.dim.open .body{display:block;animation:fade .25s}
+.dim .body ul{margin:6px 0 0;padding-left:18px} .dim .body li{margin:4px 0}
+.dim .body .cit{color:var(--teal);font-weight:900;font-size:11.5px}
+.dim.danger .dot{background:#fde7e7} .dim.danger .t{color:var(--danger)}
+.dim.trap .dot{background:#fff3e0}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1}}
+.chev{margin-left:auto;color:var(--muted);font-weight:900;transition:transform .2s}
+.dim.open .chev{transform:rotate(90deg)}
+
+/* EXPERIENCE MODES */
+.modes{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.mtab{font-family:Nunito;font-weight:900;font-size:13px;border:1.5px solid var(--line);background:#fff;color:var(--purple);
+  border-radius:30px;padding:9px 15px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:.15s}
+.mtab:hover{border-color:var(--rose)}
+.mtab.on{background:var(--purple);color:#fff;border-color:var(--purple)}
+.panel{display:none;background:var(--card);border:1.5px solid var(--line);border-radius:22px;padding:22px;box-shadow:var(--shadow)}
+.panel.on{display:block;animation:fade .3s}
+.panel h3{margin:0 0 6px;color:var(--purple);font-size:20px}
+.panel .sub{color:var(--muted);font-weight:800;font-size:13.5px;margin:0 0 16px}
+
+/* generic interactive bits */
+.q{font-size:16px;font-weight:900;margin:0 0 14px;color:var(--ink)}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;font-family:Nunito;font-weight:800;font-size:14px;border:2px solid var(--line);background:#fff;
+  border-radius:14px;padding:13px 15px;cursor:pointer;transition:.12s;display:flex;gap:11px;align-items:flex-start}
+.opt:hover{border-color:var(--rose);background:#fffafc}
+.opt .k{width:24px;height:24px;border-radius:7px;background:#f1e6f8;color:var(--purple);font-weight:900;
+  display:grid;place-items:center;flex:none;font-size:13px}
+.opt.right{border-color:var(--go);background:#eefaf0} .opt.right .k{background:var(--go);color:#fff}
+.opt.wrong{border-color:var(--danger);background:#fdeeee} .opt.wrong .k{background:var(--danger);color:#fff}
+.rationale{margin-top:14px;border-radius:14px;padding:14px 16px;font-size:13.5px;font-weight:700;display:none}
+.rationale.show{display:block;animation:fade .3s}
+.rationale.good{background:#eefaf0;border:1.5px solid #b6e3c0}
+.rationale.bad{background:#fdeeee;border:1.5px solid #f3c6c6}
+.rationale b{color:var(--purple)}
+.pill{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;
+  padding:3px 9px;border-radius:20px;background:#f6ecfb;color:var(--purple);margin-bottom:8px}
+.scorebar{display:flex;align-items:center;gap:10px;margin-top:14px;font-weight:900;color:var(--purple);font-size:13.5px}
+.next{font-family:Nunito;font-weight:900;font-size:13px;background:var(--rose);color:#fff;border:none;border-radius:30px;padding:9px 18px;cursor:pointer}
+.next:disabled{opacity:.4;cursor:default}
+
+/* teach-back chips */
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{font-family:Nunito;font-weight:800;font-size:13px;border:2px solid var(--line);background:#fff;border-radius:30px;
+  padding:9px 14px;cursor:pointer;transition:.12s}
+.chip.pick{border-color:var(--rose);background:#fff0f6}
+.chip.ok{border-color:var(--go);background:#eefaf0}
+.chip.no{border-color:var(--danger);background:#fdeeee;text-decoration:line-through;opacity:.7}
+
+/* flashcard */
+.fc{perspective:1200px;max-width:460px;margin:0 auto}
+.fcinner{position:relative;height:200px;transition:transform .5s;transform-style:preserve-3d;cursor:pointer}
+.fc.flip .fcinner{transform:rotateY(180deg)}
+.fcface{position:absolute;inset:0;backface-visibility:hidden;border-radius:18px;display:grid;place-items:center;
+  text-align:center;padding:24px;font-weight:900}
+.fcfront{background:linear-gradient(135deg,#6a1b9a,#9c27b0);color:#fff}
+.fcfront .qq{font-family:'Fredoka One';font-size:21px;line-height:1.2}
+.fcback{background:#fff;border:2px solid var(--teal);color:var(--ink);transform:rotateY(180deg);font-size:14.5px}
+.srbtns{display:flex;gap:8px;justify-content:center;margin-top:14px}
+.sr{font-family:Nunito;font-weight:900;font-size:12.5px;border:none;border-radius:30px;padding:9px 16px;cursor:pointer;color:#fff}
+.sr.again{background:var(--danger)} .sr.hard{background:var(--warn)} .sr.good{background:var(--go)}
+.srmeta{text-align:center;font-weight:900;color:var(--muted);font-size:12.5px;margin-top:10px}
+
+/* story / boss step */
+.story{background:#faf3ff;border-left:4px solid var(--rose);border-radius:0 14px 14px 0;padding:14px 16px;font-weight:800;font-size:14px;margin-bottom:14px}
+.story .who{color:var(--rose);font-family:'Fredoka One';font-size:13px;display:block;margin-bottom:3px}
+.vitals{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.vital{background:#fff;border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;font-size:12.5px;font-weight:900;text-align:center}
+.vital small{display:block;color:var(--muted);font-size:10px;letter-spacing:.5px}
+.vital.bad{border-color:var(--warn);color:var(--warn)}
+
+.foot{text-align:center;margin-top:46px;color:var(--muted);font-weight:800;font-size:12.5px}
+.wm{opacity:.6;font-size:11px;margin-top:6px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;text-align:left}.scan{margin-top:4px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <div class="ivy"><span class="face"></span> Investigator Ivy · RN</div>
+      <div class="wm" style="color:#caa6e0;opacity:.5;margin:8px 0 0;font-size:10.5px">© Samantha Jeanty · Nurse Declassified</div>
+      <div class="eyebrow" style="margin-top:14px">Concept Lab · Chapter 46</div>
+      <h1>Urinary <span class="em">Retention</span></h1>
+      <p>The bladder fills and can't empty. Left alone, it stretches past repair — and in the wrong patient, it triggers a hypertensive emergency. This is a post-op <b>emergency</b> the nurse owns.</p>
+      <div class="tagrow">
+        <span class="tag boss">BOSS CONCEPT</span>
+        <span class="tag">Post-op priority</span>
+        <span class="tag">Bladder scan first</span>
+        <span class="tag">High-yield NCLEX</span>
+      </div>
+    </div>
+    <div class="scan">
+      <div class="eyebrow" style="color:#ffd0e4">Portable bladder scanner</div>
+      <svg viewBox="0 0 260 200" id="bladderSvg" xmlns="http://www.w3.org/2000/svg" aria-label="Animated bladder filling and draining">
+        <defs>
+          <linearGradient id="urine" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#f5b800"/>
+          </linearGradient>
+          <radialGradient id="glow" cx="50%" cy="40%" r="60%">
+            <stop offset="0" stop-color="#9c5cc4"/><stop offset="1" stop-color="#4a1d6e"/>
+          </radialGradient>
+        </defs>
+        <!-- pelvis hint -->
+        <path d="M40 150 Q130 120 220 150" stroke="#7a4a9e" stroke-width="2" fill="none" opacity=".4"/>
+        <!-- bladder wall (scales) -->
+        <g id="bladderGroup" transform="translate(130 118)">
+          <ellipse id="wall" cx="0" cy="0" rx="58" ry="48" fill="url(#glow)" stroke="#d9a7f0" stroke-width="2.5"/>
+          <clipPath id="bclip"><ellipse cx="0" cy="0" rx="54" ry="44"/></clipPath>
+          <g clip-path="url(#bclip)">
+            <rect id="fluid" x="-58" y="44" width="116" height="0" fill="url(#urine)"/>
+            <rect id="fluidTop" x="-58" y="44" width="116" height="3" fill="#fff" opacity=".5"/>
+          </g>
+          <!-- detrusor stretch marks appear when full -->
+          <path id="stretch" d="M-30 -30 Q0 -42 30 -30 M-40 0 Q0 -8 40 0" stroke="#ff6b9d" stroke-width="2" fill="none" opacity="0"/>
+        </g>
+        <!-- urethra -->
+        <rect x="126" y="162" width="8" height="26" rx="4" fill="#7a4a9e" opacity=".5"/>
+        <!-- scan cone -->
+        <path d="M130 14 L96 86 Q130 100 164 86 Z" fill="#7ee0ff" opacity=".14"/>
+        <circle cx="130" cy="14" r="6" fill="#7ee0ff" opacity=".8"/>
+      </svg>
+      <div class="readout"><span id="vol">0</span><small> mL</small></div>
+      <div class="verdict" id="verdict">Empty bladder</div>
+      <div class="scanbtns">
+        <button class="mini fill" onclick="fillStep()">▲ Fill</button>
+        <button class="mini drain" onclick="drainBladder()">Straight cath ↓ drain</button>
+        <button class="mini reset" onclick="resetBladder()">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- THE BREAKDOWN: 15-DIM SPINE -->
+  <section>
+    <div class="sechead"><span class="num">01</span><h2>The Breakdown</h2></div>
+    <p class="lead">Every concept, fifteen ways. Tap a card to open it. The red cards are where patients get hurt; the amber ones are where the exam tries to trick you.</p>
+    <div class="spine" id="spine"></div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="sechead"><span class="num">02</span><h2>Make It an Experience</h2></div>
+    <p class="lead">Same concept — now you live it. Read it once, then prove you own it.</p>
+    <div class="modes" id="modes"></div>
+
+    <!-- PHYSIOLOGY -->
+    <div class="panel on" id="p-phys">
+      <span class="pill">Physiology</span>
+      <h3>Why the bladder won't let go</h3>
+      <p class="sub">Voiding is a parasympathetic reflex. Block the signal or the outlet, and urine piles up.</p>
+      <div class="story"><span class="who">The mechanism</span>
+        A full bladder stretches sensory nerves → spinal reflex fires the <b>parasympathetic</b> system → the <b>detrusor muscle contracts</b> and the internal sphincter relaxes → you void. Retention happens when any link breaks:
+        <ul style="margin:8px 0 0">
+          <li><b>Outlet blocked</b> — BPH, stricture, clot, post-op swelling.</li>
+          <li><b>Detrusor won't fire</b> — opioids, anticholinergics, antihistamines, anesthesia, diabetic neuropathy.</li>
+          <li><b>Reflex interrupted</b> — spinal cord injury, epidural, pelvic surgery.</li>
+        </ul>
+      </div>
+      <p style="font-weight:800;font-size:13.5px;color:var(--muted);margin:4px 0 0">Use the scanner up top: <b>Fill</b> to watch it distend past 300–400 mL (retention), then <b>straight-cath drain</b> to relieve it. Notice the stretch marks at high volume — that's detrusor overstretch, the damage you're preventing.</p>
+    </div>
+
+    <!-- MINI-GAME -->
+    <div class="panel" id="p-game">
+      <span class="pill">Mini-game · Scan &amp; Decide</span>
+      <h3>Bladder Scan Triage</h3>
+      <p class="sub">Three patients. Read the scan, pick the safe next move. Bladder scan <b>before</b> you ever reach for a catheter.</p>
+      <div id="gameBox"></div>
+      <div class="scorebar">Streak: <span id="gameScore">0</span> / <span id="gameTotal">3</span>
+        <button class="next" id="gameNext" onclick="gameNext()" disabled>Next patient →</button></div>
+    </div>
+
+    <!-- BOSS CASE -->
+    <div class="panel" id="p-boss">
+      <span class="pill">Clinical judgment · Boss case</span>
+      <h3>Bed 4: the hip that won't void</h3>
+      <p class="sub">Professor McEwan's own scenario. Work it like the floor — one decision at a time.</p>
+      <div class="story"><span class="who">Handoff</span>
+        Mr. Alvarez, day 0 after a <b>total hip replacement</b>. On <b>IV morphine PCA</b>. Hasn't voided in <b>10 hours</b>. Restless, pointing at his lower belly.</div>
+      <div class="vitals">
+        <div class="vital">142/78<small>BP mmHg</small></div>
+        <div class="vital">96<small>HR</small></div>
+        <div class="vital bad">distended<small>suprapubic</small></div>
+        <div class="vital bad">0 mL<small>voided 10h</small></div>
+      </div>
+      <div id="bossBox"></div>
+    </div>
+
+    <!-- NCLEX -->
+    <div class="panel" id="p-nclex">
+      <span class="pill">NCLEX pattern</span>
+      <h3>Test-writer's mind</h3>
+      <p class="sub">The patterns that show up again and again. Answer, then read why the trap is a trap.</p>
+      <div id="nclexBox"></div>
+      <div class="scorebar">Score: <span id="nScore">0</span> / <span id="nTotal">3</span>
+        <button class="next" id="nNext" onclick="nclexNext()" disabled>Next question →</button></div>
+    </div>
+
+    <!-- TEACH-BACK -->
+    <div class="panel" id="p-teach">
+      <span class="pill">Teach-back</span>
+      <h3>What do you actually tell the patient?</h3>
+      <p class="sub">Tap every line that belongs in your teaching. Leave the wrong ones. Then check.</p>
+      <div class="chips" id="teachChips"></div>
+      <button class="next" style="margin-top:16px" onclick="checkTeach()">Check teaching</button>
+      <div class="rationale" id="teachR"></div>
+    </div>
+
+    <!-- SPACED REP -->
+    <div class="panel" id="p-sr">
+      <span class="pill">Spaced repetition</span>
+      <h3>Lock it in</h3>
+      <p class="sub">Tap the card to flip. Rate how it felt — the ones you miss come back sooner.</p>
+      <div class="fc" id="fc" onclick="flipCard()"><div class="fcinner">
+        <div class="fcface fcfront"><div class="qq" id="fcQ"></div></div>
+        <div class="fcface fcback"><div id="fcA"></div></div>
+      </div></div>
+      <div class="srbtns">
+        <button class="sr again" onclick="rateCard(0)">Again</button>
+        <button class="sr hard" onclick="rateCard(1)">Hard</button>
+        <button class="sr good" onclick="rateCard(2)">Got it</button>
+      </div>
+      <div class="srmeta" id="srMeta"></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    Concept Lab — a template. One concept, fully realized. Approve it and Ivy scales it across all of Chapter 46.
+    <div class="wm">© Samantha Jeanty · Nurse Declassified</div>
+    <div class="wm">nursedeclassifiedsurvivalguide.com · © Samantha Jeanty · Nurse Declassified</div>
+  </div>
+</div>
+
+<script>
+/* ---------- SIGNATURE: bladder scanner ---------- */
+var vol=0;
+function renderBladder(){
+  var cap=700, frac=Math.min(vol/cap,1);
+  var scale=0.62+0.55*frac;                 // wall grows as it fills
+  document.getElementById('bladderGroup').setAttribute('transform','translate(130 118) scale('+scale.toFixed(3)+')');
+  var h=88*Math.min(vol/600,1);             // fluid height within clip
+  var f=document.getElementById('fluid'), ft=document.getElementById('fluidTop');
+  f.setAttribute('y',(44-h).toFixed(1)); f.setAttribute('height',h.toFixed(1));
+  ft.setAttribute('y',(44-h).toFixed(1));
+  document.getElementById('stretch').setAttribute('opacity', vol>450? Math.min((vol-450)/250,1).toFixed(2):0);
+  document.getElementById('vol').textContent=Math.round(vol);
+  var v=document.getElementById('verdict'), w=document.getElementById('wall');
+  if(vol<50){v.textContent='Empty bladder';v.style.color='#cbb8d8';w.setAttribute('stroke','#d9a7f0')}
+  else if(vol<300){v.textContent='Filling — normal range';v.style.color='#9ee6a0';w.setAttribute('stroke','#9ee6a0')}
+  else if(vol<450){v.textContent='Retention — assess & intervene';v.style.color='#ffd23f';w.setAttribute('stroke','#ffd23f')}
+  else{v.textContent='⚠ Severe distension — risk of damage';v.style.color='#ff8da6';w.setAttribute('stroke','#ff6b9d')}
+}
+function fillStep(){vol=Math.min(vol+90,720);renderBladder()}
+function drainBladder(){var t=setInterval(function(){vol=Math.max(vol-40,0);renderBladder();if(vol<=0)clearInterval(t)},28)}
+function resetBladder(){vol=0;renderBladder()}
+renderBladder();
+
+/* ---------- 01 · 15-DIMENSION SPINE ---------- */
+var SPINE=[
+ ['🫧','What it is','core','The bladder cannot empty, so urine accumulates and the bladder distends. Volume can climb to <b>600–1,000 mL or more</b>. Can be <b>acute</b> (sudden, painful — an emergency) or <b>chronic</b> (gradual, often painless).'],
+ ['⚙️','Why it happens','core','Voiding is a parasympathetic reflex. Retention = a broken link: <b>blocked outlet</b>, a <b>detrusor that won\'t contract</b>, or an <b>interrupted spinal reflex</b>. <span class="cit">(Potter &amp; Perry, 12th ed.)</span>'],
+ ['🔎','Causes','core','<ul><li><b>Post-op / anesthesia</b> — the classic.</li><li><b>Medications</b>: opioids, anticholinergics, antihistamines, antipsychotics, decongestants → ↓detrusor tone.</li><li><b>Obstruction</b>: BPH, stricture, clot.</li><li><b>Neuro</b>: SCI, diabetic neuropathy (bladder hypotonia), epidural.</li></ul>'],
+ ['🚩','Signs &amp; symptoms','core','Suprapubic <b>pressure/discomfort</b>, restlessness, inability to void <b>or</b> frequent small voids (50–100 mL), and <b>overflow dribbling</b>. Acute retention is distressing and painful.'],
+ ['🩺','Assessment findings','core','<b>Bladder scan</b> is the non-invasive gold standard — <b>always scan before catheterizing</b> to avoid an unnecessary invasive procedure. Palpable, tender, distended suprapubic mass. Document <b>pre- and post-void residual (PVR)</b>; PVR <b>&gt;150 mL is abnormal</b>, &lt;100 mL is the goal.'],
+ ['💀','What happens if ignored','danger','Detrusor <b>overstretch</b> → permanent bladder dysfunction; <b>overflow incontinence</b>; backflow → <b>hydronephrosis</b> and kidney injury; <b>UTI</b> from stasis. In SCI <b>above T6</b>, a full bladder is the #1 trigger of <b>autonomic dysreflexia</b> — a hypertensive emergency.'],
+ ['💉','Nursing interventions','core','<ul><li><b>Non-invasive first</b>: privacy, normal position (stand/sit), warm perineal water, running-water sound, ambulate if safe, run the tap.</li><li><b>Bladder scan</b> to confirm.</li><li>If <b>&gt;300–400 mL</b> retained and can\'t void → <b>straight (intermittent) catheterization</b> or indwelling <b>per order</b>.</li><li><b>Review/stop</b> offending meds; treat pain.</li><li><b>Double voiding</b>: void, wait 2–5 min, void again.</li></ul>'],
+ ['🧠','Why the interventions work','core','Privacy + position + warm water + running water all <b>trigger the parasympathetic micturition reflex</b>. Straight cath relieves distension <b>without</b> the lasting CAUTI risk of an indwelling line. Removing offending meds <b>restores detrusor tone</b>.'],
+ ['⛔','What NOT to do','danger','Don\'t place an <b>indwelling catheter for convenience</b>. Don\'t treat <b>overflow dribbling</b> as ordinary incontinence. Don\'t apply <b>Credé / manual pressure</b> on a denervated bladder without an order. Don\'t leave a post-op patient <b>&gt;6 hours</b> without assessing voiding.'],
+ ['🧯','Why not','trap','Indwelling catheters are the <b>#1 cause of CAUTI</b>, the most common hospital-acquired infection (~40% of HAIs) — and CMS won\'t reimburse it. Mislabeling overflow as incontinence means the <b>retained 600 mL keeps damaging the bladder</b>. Credé on a reflexic bladder can cause reflux.'],
+ ['🗣️','Patient teaching','core','Void on a <b>schedule</b>, don\'t hold it. <b>Double-void</b> to empty fully. Limit <b>caffeine &amp; alcohol</b> (bladder irritants/diuretics). After surgery, <b>early voiding matters</b> — tell us if you can\'t go. Recognize the feeling of fullness and pressure.'],
+ ['⚖️','Clinical judgment','danger','A post-op patient who <b>can\'t void with ~600 mL on scan = retention requiring intervention</b> — escalate for a catheter order <b>without hesitation</b>. In total-hip patients, maintain <b>abduction precautions</b> during any transfer to a commode.'],
+ ['🪤','Common exam traps','trap','① <b>Overflow incontinence</b> dressed up to look like urge/functional incontinence — it\'s <b>retention</b>. ② Picking indwelling when <b>straight cath</b> is safer. ③ Missing the <b>opioid → retention</b> link. ④ Reaching for the catheter <b>before</b> the bladder scan.'],
+ ['📝','NCLEX patterns','trap','"Post-op, hasn\'t voided in X hours" → <b>bladder scan first</b>. SATA: <b>causes/meds</b> of retention. Priority: a full bladder is the <b>#1 AD trigger</b> in SCI. "Most accurate way to assess?" → <b>bladder scanner</b>, not palpation.'],
+ ['🔁','Teach-back opportunity','core','Have the patient explain <b>double-voiding</b> back to you, and state <b>when to call the nurse</b> ("if I can\'t pee or feel full and pressured"). Teach-back confirms understanding, not just nodding.']
+];
+var spineEl=document.getElementById('spine');
+SPINE.forEach(function(d,i){
+  var cls=d[2]==='danger'?'dim danger':d[2]==='trap'?'dim trap':'dim';
+  var el=document.createElement('div'); el.className=cls;
+  el.innerHTML='<button onclick="this.parentNode.classList.toggle(\'open\')"><span class="dot">'+d[0]+'</span>'+
+    '<span class="t">'+d[1]+'<small>'+(i+1)+' / 15</small></span><span class="chev">›</span></button>'+
+    '<div class="body">'+d[3]+'</div>';
+  spineEl.appendChild(el);
+});
+
+/* ---------- 02 · MODE TABS ---------- */
+var MODES=[['phys','🫀 Physiology'],['game','🎯 Mini-game'],['boss','🚨 Boss case'],['nclex','📝 NCLEX'],['teach','🗣️ Teach-back'],['sr','🔁 Spaced rep']];
+var modesEl=document.getElementById('modes');
+MODES.forEach(function(m,i){
+  var b=document.createElement('button'); b.className='mtab'+(i===0?' on':''); b.innerHTML=m[1];
+  b.onclick=function(){
+    document.querySelectorAll('.mtab').forEach(function(x){x.classList.remove('on')});
+    document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('on')});
+    b.classList.add('on'); document.getElementById('p-'+m[0]).classList.add('on');
+  };
+  modesEl.appendChild(b);
+});
+
+/* ---------- MINI-GAME: scan triage ---------- */
+var GAME=[
+ {s:'Post-op patient, restless, last void 7h ago. You palpate a firm suprapubic mass. Bladder scanner is on the wall.',
+  o:['Insert an indwelling catheter now','Bladder-scan first to confirm the volume','Tell them to relax and recheck in 4 hours','Apply firm suprapubic pressure to push urine out'],
+  a:1,why:'Scan before you cath — confirm there\'s actually urine to drain and spare an unnecessary, infection-prone invasive procedure.'},
+ {s:'Bladder scan reads <b>340 mL</b>. Patient feels urgency but cannot start a stream. No catheter order yet.',
+  o:['Straight catheterize immediately without an order','Try non-invasive measures: privacy, run the tap, warm water, ambulate','Document "incontinence" and place a brief','Restrict fluids to reduce output'],
+  a:1,why:'At ~340 mL with intact anatomy, trigger the reflex first (privacy, running water, position, ambulation). Cath needs an order and is the next step only if non-invasive fails.'},
+ {s:'Bladder scan reads <b>620 mL</b>, patient still cannot void after non-invasive measures. On morphine PCA.',
+  o:['Keep waiting and rescan in 6 hours','Encourage more fluids to "flush it through"','Escalate now for a catheter order and review the opioid','Massage the bladder firmly'],
+  a:2,why:'620 mL + unable to void after non-invasive measures = retention requiring intervention. Escalate for a cath order without hesitation and flag the opioid as the likely cause.'}
+];
+var gi=0,gScore=0;
+function renderGame(){
+  var g=GAME[gi];
+  var h='<div class="story"><span class="who">Patient '+(gi+1)+'</span>'+g.s+'</div><div class="opts">';
+  g.o.forEach(function(t,k){h+='<button class="opt" onclick="gameAns('+k+')"><span class="k">'+'ABCD'[k]+'</span><span>'+t+'</span></button>'});
+  h+='</div><div class="rationale" id="gameR"></div>';
+  document.getElementById('gameBox').innerHTML=h;
+  document.getElementById('gameTotal').textContent=GAME.length;
+  document.getElementById('gameNext').disabled=true;
+}
+function gameAns(k){
+  var g=GAME[gi],btns=document.querySelectorAll('#gameBox .opt');
+  btns.forEach(function(b){b.onclick=null});
+  btns[g.a].classList.add('right');
+  var r=document.getElementById('gameR');
+  if(k===g.a){gScore++;document.getElementById('gameScore').textContent=gScore;r.className='rationale good show';r.innerHTML='<b>Correct.</b> '+g.why}
+  else{btns[k].classList.add('wrong');r.className='rationale bad show';r.innerHTML='<b>Not safe.</b> '+g.why}
+  document.getElementById('gameNext').disabled=false;
+  if(gi===GAME.length-1)document.getElementById('gameNext').textContent='Replay';
+}
+function gameNext(){ if(gi>=GAME.length-1){gi=0;gScore=0;document.getElementById('gameScore').textContent=0;document.getElementById('gameNext').textContent='Next patient →'} else {gi++} renderGame(); }
+renderGame();
+
+/* ---------- BOSS CASE: multi-step ---------- */
+var BOSS=[
+ {q:'Mr. Alvarez can\'t void, suprapubic distension, 10 hours out. What is your FIRST action?',
+  o:['Catheterize him right away','Bladder scan to confirm and quantify retention','Give more IV fluids','Reassure him and recheck after lunch'],a:1,
+  why:'Confirm and quantify with a non-invasive scan before any invasive step.'},
+ {q:'Scan shows <b>620 mL</b>. You try privacy, running water, and repositioning — still no void. Next?',
+  o:['Wait another 6 hours','Escalate for a straight-cath order and review the morphine PCA','Place an indwelling catheter for convenience','Apply Credé pressure'],a:1,
+  why:'620 mL after failed non-invasive measures = intervention now. Straight cath (not indwelling) and address the opioid driving it.'},
+ {q:'You\'re cleared to transfer him to a bedside commode. What precaution is specific to his surgery?',
+  o:['Keep the bed flat','Maintain hip abduction — no adduction or crossing legs','Have him stand on the operative leg first','Flex the hip past 90°'],a:1,
+  why:'Total hip: maintain abduction precautions during transfer — never adduct or cross the legs, avoid hip flexion past 90°.'},
+ {q:'After catheterization drains 600 mL, what confirms your intervention worked?',
+  o:['Patient feels better','Post-void residual <100 mL on rescan','Blood pressure normalizes','He falls asleep'],a:1,
+  why:'Objective evaluation: PVR <100 mL on bladder scan within 4–6 hours is the measurable outcome.'}
+];
+var bi=0;
+function renderBoss(){
+  var b=BOSS[bi],h='<div class="q">Step '+(bi+1)+' / '+BOSS.length+': '+b.q+'</div><div class="opts">';
+  b.o.forEach(function(t,k){h+='<button class="opt" onclick="bossAns('+k+')"><span class="k">'+'ABCD'[k]+'</span><span>'+t+'</span></button>'});
+  h+='</div><div class="rationale" id="bossR"></div>';
+  document.getElementById('bossBox').innerHTML=h;
+}
+function bossAns(k){
+  var b=BOSS[bi],btns=document.querySelectorAll('#bossBox .opt');
+  btns.forEach(function(x){x.onclick=null}); btns[b.a].classList.add('right');
+  var r=document.getElementById('bossR');
+  if(k===b.a){r.className='rationale good show';r.innerHTML='<b>Right call.</b> '+b.why}
+  else{btns[k].classList.add('wrong');r.className='rationale bad show';r.innerHTML='<b>Reconsider.</b> '+b.why}
+  var nxt=bi<BOSS.length-1?'<button class="next" style="margin-top:14px" onclick="bi++;renderBoss()">Continue →</button>'
+        :'<div style="margin-top:14px;font-weight:900;color:var(--go)">✔ Case cleared. Bladder relieved, opioid flagged, abduction protected, outcome measured. That\'s the whole job.</div>';
+  r.innerHTML+=nxt;
+}
+renderBoss();
+
+/* ---------- NCLEX ---------- */
+var NCLEX=[
+ {q:'A patient is 8 hours post-op and has not voided. Which action should the nurse take FIRST?',
+  o:['Insert an indwelling urinary catheter','Perform a bladder scan','Increase IV fluid rate','Notify the provider for a stat UA'],a:1,
+  why:'<b>Assessment before intervention.</b> The bladder scan tells you whether there\'s retention at all — catheterizing blindly risks an unnecessary CAUTI source.'},
+ {q:'Which findings suggest urinary retention? <b>Select all that apply.</b> (pick the best single grouping)',
+  o:['Suprapubic distension + small frequent voids + restlessness','Polyuria + thirst + weight gain','Dysuria + flank pain + fever only','Bradycardia + dry skin + constipation'],a:0,
+  why:'Retention shows as <b>distension, overflow dribbling/small frequent voids, restlessness, and suprapubic discomfort</b>. Fever/flank pain points to infection; the others are distractors.'},
+ {q:'A patient with a T4 spinal cord injury develops a pounding headache and BP 210/110. What is the nurse\'s priority?',
+  o:['Give the scheduled stool softener','Check for and relieve a distended bladder / kinked catheter','Lay the patient flat and elevate the legs','Administer a PRN sedative'],a:1,
+  why:'<b>Autonomic dysreflexia.</b> A full bladder is the #1 trigger above T6. Sit the patient up and remove the noxious stimulus (bladder/bowel) immediately — this is the urinary-retention danger made lethal.'}
+];
+var ni=0,nScore=0;
+function renderN(){
+  var n=NCLEX[ni],h='<div class="q">'+n.q+'</div><div class="opts">';
+  n.o.forEach(function(t,k){h+='<button class="opt" onclick="nAns('+k+')"><span class="k">'+'ABCD'[k]+'</span><span>'+t+'</span></button>'});
+  h+='</div><div class="rationale" id="nR"></div>';
+  document.getElementById('nclexBox').innerHTML=h;
+  document.getElementById('nTotal').textContent=NCLEX.length;
+  document.getElementById('nNext').disabled=true;
+}
+function nAns(k){
+  var n=NCLEX[ni],btns=document.querySelectorAll('#nclexBox .opt');
+  btns.forEach(function(b){b.onclick=null}); btns[n.a].classList.add('right');
+  var r=document.getElementById('nR');
+  if(k===n.a){nScore++;document.getElementById('nScore').textContent=nScore;r.className='rationale good show';r.innerHTML='<b>Correct.</b> '+n.why}
+  else{btns[k].classList.add('wrong');r.className='rationale bad show';r.innerHTML='<b>Trap.</b> '+n.why}
+  document.getElementById('nNext').disabled=false;
+  if(ni===NCLEX.length-1)document.getElementById('nNext').textContent='Replay';
+}
+function nclexNext(){ if(ni>=NCLEX.length-1){ni=0;nScore=0;document.getElementById('nScore').textContent=0;document.getElementById('nNext').textContent='Next question →'} else {ni++} renderN(); }
+renderN();
+
+/* ---------- TEACH-BACK ---------- */
+var TEACH=[
+ ['Void on a schedule — don\'t hold it',1],
+ ['Double-void: go, wait a few minutes, go again',1],
+ ['Cut back on caffeine and alcohol',1],
+ ['Tell us right away if you can\'t pee after surgery',1],
+ ['Push down hard on your belly to force it out',0],
+ ['Limit all fluids so the bladder never fills',0],
+ ['Hold your urine as long as possible to "train" the bladder',0]
+];
+var tEl=document.getElementById('teachChips');
+TEACH.forEach(function(t,i){
+  var c=document.createElement('button');c.className='chip';c.textContent=t[0];c.dataset.i=i;
+  c.onclick=function(){c.classList.toggle('pick')};
+  tEl.appendChild(c);
+});
+function checkTeach(){
+  var ok=true;
+  document.querySelectorAll('#teachChips .chip').forEach(function(c){
+    var good=TEACH[c.dataset.i][1]===1, picked=c.classList.contains('pick');
+    c.classList.remove('pick');
+    if(good&&picked)c.classList.add('ok');
+    else if(!good&&picked){c.classList.add('no');ok=false}
+    else if(good&&!picked){c.classList.add('no');ok=false}
+  });
+  var r=document.getElementById('teachR');
+  r.className='rationale '+(ok?'good':'bad')+' show';
+  r.innerHTML=ok?'<b>Perfect teaching.</b> Schedule voiding, double-void, limit irritants, and report inability to void. Now have the patient say it back to you.'
+    :'<b>Almost.</b> Keep the four green lines. Bearing down hard, fluid restriction, and "holding it to train" all <b>worsen</b> retention or risk reflux — leave those out.';
+}
+
+/* ---------- SPACED REPETITION ---------- */
+var CARDS=[
+ ['Most accurate, non-invasive way to assess bladder volume?','<b>Bladder scanner</b> (portable ultrasound). Always scan <b>before</b> catheterizing.'],
+ ['Post-void residual: normal goal vs. abnormal?','Goal <b>&lt;100 mL</b>. <b>&gt;150 mL is abnormal</b> and suggests incomplete emptying.'],
+ ['Volume on scan that signals you may need to catheterize (with inability to void)?','<b>&gt;300–400 mL</b> retained + can\'t void → straight cath or indwelling <b>per order</b>.'],
+ ['Why straight cath over indwelling when possible?','Relieves retention <b>without</b> the lasting CAUTI risk of an indwelling line (CAUTI = #1 HAI).'],
+ ['Overflow dribbling with a high residual is really…','<b>Retention</b>, not simple incontinence. Treat the retention.'],
+ ['#1 trigger of autonomic dysreflexia in SCI above T6?','A <b>distended bladder</b>. Sit them up, relieve the bladder/bowel — hypertensive emergency.']
+];
+var order=CARDS.map(function(_,i){return i}), cidx=0, flipped=false, reps=0;
+function showCard(){
+  flipped=false;document.getElementById('fc').classList.remove('flip');
+  var c=CARDS[order[cidx]];
+  document.getElementById('fcQ').innerHTML=c[0];
+  document.getElementById('fcA').innerHTML=c[1];
+  document.getElementById('srMeta').textContent='Card '+(cidx+1)+' of '+order.length+' · reviews: '+reps;
+}
+function flipCard(){flipped=!flipped;document.getElementById('fc').classList.toggle('flip')}
+function rateCard(score){
+  reps++;
+  var cur=order.splice(cidx,1)[0];
+  // again→soon (2 ahead), hard→middle, good→end
+  var pos=score===0?Math.min(cidx+2,order.length):score===1?Math.min(cidx+3,order.length):order.length;
+  order.splice(pos,0,cur);
+  if(cidx>=order.length)cidx=0;
+  showCard();
+}
+showCard();
+</script>
+</body>
+</html>
